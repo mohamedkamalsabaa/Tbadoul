@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تسجيل الدخول / التسجيل - تبادول</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://example.com/path/to/nvaf.js"></script> <!-- استبدله بالمسار الصحيح -->
+  <style>
+    :root {
+      --primary-color: #662483;
+      --primary-light: #8033a2;
+      --secondary-color: #36A9E1;
+      --secondary-light: #5cbae6;
+      --white: #ffffff;
+      --light-gray: #f8f9fa;
+      --dark-gray: #333333;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      background-color: #f0f2f5;
+      background-image: 
+        linear-gradient(135deg, rgba(102, 36, 131, 0.9), rgba(128, 51, 162, 0.9)),
+        linear-gradient(45deg, rgba(54, 169, 225, 0.1), rgba(92, 186, 230, 0.1));
+      background-size: 100% 100%, 200% 200%;
+      background-position: center, center;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main-content {
+      width: 100%;
+      max-width: 450px;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      width: 100%;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      text-align: center;
+      color: var(--primary-color);
+      font-size: 2rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 12px 0;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      direction: rtl;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(102, 36, 131, 0.1);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .checkbox-container {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .checkbox-container input {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--primary-color);
+      margin: 0;
+    }
+
+    .nvaf-login {
+      margin-top: 25px;
+      border-top: 1px solid #eee;
+      padding-top: 25px;
+    }
+
+    .nvaf-login-btn {
+      background-color: #00998A;
+    }
+
+    .nvaf-login-btn:hover {
+      background-color: #00b39d;
+    }
+
+    p {
+      margin-top: 25px;
+      text-align: center;
+      color: var(--dark-gray);
+      font-size: 1.1rem;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--primary-light);
+    }
+
+    @media (max-width: 480px) {
+      .main-content {
+        padding: 15px;
+      }
+
+      .form-container {
+        padding: 30px;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <div class="form-container">
+      <!-- دخول -->
+      <div id="loginSection">
+        <h2>تسجيل الدخول</h2>
+        <form id="loginForm">
+          <input type="email" placeholder="البريد الإلكتروني" required />
+          <input type="password" placeholder="كلمة المرور" required />
+          <button type="submit" class="btn primary-login">تسجيل الدخول</button>
+        </form>
+        <div class="nvaf-login">
+          <button id="loginButton" class="btn nvaf-login-btn">تسجيل الدخول عبر نفاذ</button>
+        </div>
+        <p>ليس لديك حساب؟ <a href="#" onclick="showRegister()">إنشاء حساب جديد</a></p>
+      </div>
+
+      <!-- تسجيل -->
+      <div id="registerSection" style="display: none;">
+        <h2>إنشاء حساب جديد</h2>
+        <form id="registerForm">
+          <input type="text" placeholder="الاسم الكامل" required />
+          <input type="email" placeholder="البريد الإلكتروني" required />
+          <input type="tel" placeholder="رقم الهاتف" required />
+          <input type="text" placeholder="رقم الإقامة" required />
+          <input type="password" placeholder="كلمة المرور" required />
+          <div class="checkbox-container">
+            <input type="checkbox" id="terms" required />
+            <label for="terms">أوافق على الشروط والأحكام</label>
+          </div>
+          <button type="submit" class="btn primary-login">تسجيل</button>
+        </form>
+        <p>لديك حساب بالفعل؟ <a href="#" onclick="showLogin()">تسجيل الدخول</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showLogin() {
+      document.getElementById('registerSection').style.display = 'none';
+      document.getElementById('loginSection').style.display = 'block';
+    }
+
+    function showRegister() {
+      document.getElementById('loginSection').style.display = 'none';
+      document.getElementById('registerSection').style.display = 'block';
+    }
+
+    document.getElementById('loginButton').onclick = function () {
+      nvaf.login().then(function (user) {
+        console.log('User ID: ' + user.id);
+        console.log('User Name: ' + user.name);
+        console.log('User Email: ' + user.email);
+        // بعد تسجيل الدخول بنجاح، قم بتوجيه المستخدم إلى الصفحة الرئيسية
+        window.location.href = '../index.html';
+      }).catch(function (error) {
+        console.error('Login failed: ', error);
+      });
+    };
+
+    // إضافة معالجة لتسجيل الدخول العادي
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // هنا يمكنك إضافة منطق التحقق من صحة بيانات تسجيل الدخول
+      // بعد نجاح تسجيل الدخول، قم بتوجيه المستخدم إلى الصفحة الرئيسية
+      window.location.href = '../index.html';
+    });
+
+    // إضافة معالجة للتسجيل
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // هنا يمكنك إضافة منطق معالجة بيانات التسجيل
+      // بعد نجاح التسجيل، قم بتوجيه المستخدم إلى صفحة تسجيل الدخول
+      showLogin();
+    });
+  </script>
+</body>
+</html>
