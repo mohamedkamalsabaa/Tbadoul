@@ -5,7 +5,7 @@
 - **Team roles**:
   - I acted as **leader**, coordinating development and team communication.
   - The **fourth member** handled the **graphics work and logos**.
-  - The other **three of us** (including me) built the **web pages** themselves.
+  - The other **two of us** (including me) built the **web pages** themselves.
   
 The site is built in **Arabic**, per the professor’s requirement. It showcases our ability to design and implement user-interfacing functionality while accommodating right-to-left language layouts.
 
@@ -13,7 +13,7 @@ The site is built in **Arabic**, per the professor’s requirement. It showcases
 
 ## Project Structure
 
-- **index.html** – Main landing page / introduction
+- **index.html** – Main landing page/introduction (By Me)
 - **Other pages** – Developed individually by each team member
-- **styles.css** – Modern, responsive stylesheet
-- **script.js** – JavaScript for interactivity and user experience enhancements
+- **styles.css** – Modern, responsive stylesheet (The main page by me)
+- **script.js** – JavaScript for interactivity and user experience enhancements (By Me)
